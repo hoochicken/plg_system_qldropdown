@@ -1,0 +1,16 @@
+/*
+@package		plg_system_qldropdown
+@copyright	    Copyright (C) 2017 ql.de All rights reserved.
+@author 		Mareike Riegel mareike.riegel@ql.de
+@license		GNU General Public License version 2 or later; see LICENSE.txt
+*/
+ul.qldropdown.horizontal>li {float:left;}
+ul.qldropdown li {position:relative;}
+ul.qldropdown li ul {list-style-type:none;padding:0;margin:0;min-width:100%;z-index:10;box-sizing:border-box;}
+ul.qldropdown li>ul {display:none;}
+ul.qldropdown.horizontal li ul {position:absolute;}
+ul.qldropdown.horizontal li ul li{position:relative;}
+ul.qldropdown.horizontal li ul li ul {left:100%;width:100%;top:0;}
+ul.qldropdown.verticaljs li ul {position:relative;}
+ul.qldropdown.vertical>li>ul>li>a {padding-left:20px;}
+ul.qldropdown.vertical>li>ul>li>ul>li a {padding-left:40px;}
