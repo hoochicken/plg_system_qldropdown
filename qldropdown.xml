@@ -6,7 +6,7 @@
     <copyright>Copyright (C) 2022 ql.de All rights reserved.</copyright>
     <authorEmail>support@ql.de</authorEmail>
     <authorUrl>http://ql.de/</authorUrl>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <description>PLG_SYSTEM_QLDROPDOWN_DESCRIPTION</description>
     <updateservers>
@@ -15,6 +15,7 @@
     <files>
         <filename plugin="qldropdown">qldropdown.php</filename>
         <filename plugin="qldropdown">index.html</filename>
+        <folder plugin="qldropdown">_jupdate</folder>
         <folder plugin="qldropdown">css</folder>
         <folder plugin="qldropdown">js</folder>
         <folder plugin="qldropdown">language</folder>

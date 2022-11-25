@@ -8,7 +8,7 @@
 		<description>This plugin turns a standard code J! menu inso a dropdownmenu<br />Let menu display all(!) levels of menu items. Add menu classes 'qldropdown'. Done!</description>
 		<infourl title="ql.de - Blackforest Software">https://ql.de</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/hoochicken/plg_content_qltabs/archive/refs/tags/v1.2.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/hoochicken/plg_content_qltabs/archive/refs/tags/v1.2.1.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>
