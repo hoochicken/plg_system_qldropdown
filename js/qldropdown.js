@@ -11,22 +11,22 @@ jQuery(function()
     jQuery('ul.qldropdown li a').on('tap',function()
     {
         //alert('tap');
-        var returnValue=qluseNavigation(jQuery(this));
+        let returnValue=qluseNavigation(jQuery(this));
         return returnValue;
     });
-    jQuery('ul.qldropdown:not(".mouseover") li a').click(function()
+    jQuery('ul.qldropdown:not(".qlmouseover") li a').click(function()
     {
         //alert('cl');
         var returnValue=qluseNavigation(jQuery(this));
         return returnValue;
     });
-    jQuery('ul.qldropdown.mouseover li a').mouseover(function()
+    jQuery('ul.qldropdown.qlmouseover li a').mouseover(function()
     {
         //alert('mo - mo');
         var returnValue=qluseNavigation(jQuery(this));
         return returnValue;
     });
-    jQuery('ul.qldropdown.mouseover li a').click(function()
+    jQuery('ul.qldropdown.qlmouseover li a').click(function()
     {
         //alert('mo - ck');
         var returnValue=qluseNavigation(jQuery(this));
