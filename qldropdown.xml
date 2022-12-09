@@ -15,6 +15,7 @@
     <files>
         <filename plugin="qldropdown">qldropdown.php</filename>
         <filename plugin="qldropdown">index.html</filename>
+	<filename plugin="qldropdown">license.txt</filename>
         <folder plugin="qldropdown">_jupdate</folder>
         <folder plugin="qldropdown">css</folder>
         <folder plugin="qldropdown">js</folder>
