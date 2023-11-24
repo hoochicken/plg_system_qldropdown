@@ -9,12 +9,14 @@
 //no direct access
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\Component\Finder\Administrator\Indexer\Parser\Html;
 
 defined('_JEXEC') or die ('Restricted Access');
 
 jimport('joomla.plugin.plugin');
 
-class plgSystemQldropdown extends JPlugin
+class plgSystemQldropdown extends CMSPlugin
 {
     public $params;
 
@@ -24,8 +26,9 @@ class plgSystemQldropdown extends JPlugin
      */
     public function __construct(& $subject, $config)
     {
+        $lang = Factory::getApplication()->getLanguage();
+        $lang->load('plg_content_qldropdown', dirname(__FILE__));
         parent::__construct($subject, $config);
-        $this->loadLanguage();
     }
 
     /**
@@ -33,7 +36,7 @@ class plgSystemQldropdown extends JPlugin
      */
     public function onAfterDispatch()
     {
-        if (1 == $this->params->get('jquery', 0)) JHtml::_('jquery.framework');
+        if (1 == $this->params->get('jquery', 0)) Html::_('jquery.framework');
         $this->addStyles();
         $this->addJavascript();
     }
@@ -43,15 +46,8 @@ class plgSystemQldropdown extends JPlugin
      */
     public function addStyles()
     {
-        if ($this->isJoomla4((int) JVERSION)) {
-            $wam = Factory::getDocument()->getWebAssetManager();
-            $wam->registerAndUseStyle('plg_system_qldropdown', 'plg_system_qldropdown/qldropdown.css');
-        } else {
-            JHtml::stylesheet('plg_system_qldropdown/qldropdown.css', array(), true);
-        }
-        if ($this->params->get('stylesActive', '0')) {
-            JFactory::getDocument()->addStyleDeclaration($this->getStyles($this->params));
-        }
+        $wam = Factory::getApplication()->getDocument()->getWebAssetManager();
+        $wam->registerAndUseStyle('plg_system_qldropdown', 'plg_system_qldropdown/qldropdown.css');
     }
 
     /**
@@ -59,22 +55,9 @@ class plgSystemQldropdown extends JPlugin
      */
     public function addJavascript()
     {
-        if ($this->isJoomla4((int) JVERSION)) {
-            $wam = Factory::getDocument()->getWebAssetManager();
-            $wam->registerAndUseScript('plg_system_qldropdown', 'plg_system_qldropdown/qldropdown.js');
-            if (1 == $this->params->get('hide', 1)) $wam->registerAndUseScript('plg_system_qldropdown-c', 'plg_system_qldropdown/qldropdown-content.js');
-        } else {
-            JHtml::script('plg_system_qldropdown/qldropdown.js');
-            if (1 == $this->params->get('hide', 1)) JHtml::script('plg_system_qldropdown/qldropdown-content.js');
-        }
-    }
-
-    /**
-     *
-     */
-    public function isJoomla4($version)
-    {
-        return 4 <= $version;
+        $wam = Factory::getApplication()->getDocument()->getWebAssetManager();
+        $wam->registerAndUseScript('plg_system_qldropdown', 'plg_system_qldropdown/qldropdown.js');
+        if ($this->params->get('hide', 1)) $wam->registerAndUseScript('plg_system_qldropdown-c', 'plg_system_qldropdown/qldropdown-content.js');
     }
 
 }
