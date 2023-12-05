@@ -27,6 +27,9 @@ class plgSystemQldropdown extends CMSPlugin
      */
     public function __construct(& $subject, $config)
     {
+        if (Factory::getApplication()->isClient('site')) {
+            return;
+        }
         $lang = Factory::getApplication()->getLanguage();
         $lang->load('plg_content_qldropdown', dirname(__FILE__));
         parent::__construct($subject, $config);
@@ -37,7 +40,10 @@ class plgSystemQldropdown extends CMSPlugin
      */
     public function onAfterDispatch()
     {
-        if (1 == $this->params->get('jquery', 0)) HTMLHelper::_('jquery.framework');
+        if ($this->params->get('jquery', 0)) HTMLHelper::_('jquery.framework');
+        if (!Factory::getApplication()->isClient('site')) {
+            return;
+        }
         $this->addStyles();
         $this->addJavascript();
     }
