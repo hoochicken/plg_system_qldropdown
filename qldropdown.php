@@ -11,7 +11,6 @@
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\Component\Finder\Administrator\Indexer\Parser\Html;
 
 defined('_JEXEC') or die ('Restricted Access');
 
@@ -19,20 +18,18 @@ jimport('joomla.plugin.plugin');
 
 class plgSystemQldropdown extends CMSPlugin
 {
-    public $params;
-
     /**
      * constructor
      *setting language
      */
     public function __construct(& $subject, $config)
     {
+        parent::__construct($subject, $config);
         if (Factory::getApplication()->isClient('site')) {
             return;
         }
         $lang = Factory::getApplication()->getLanguage();
         $lang->load('plg_content_qldropdown', dirname(__FILE__));
-        parent::__construct($subject, $config);
     }
 
     /**
@@ -40,7 +37,10 @@ class plgSystemQldropdown extends CMSPlugin
      */
     public function onAfterDispatch()
     {
-        if ($this->params->get('jquery', 0)) HTMLHelper::_('jquery.framework');
+        if (empty($this->params)) return;
+        if ($this->params->get('jquery', 0)) {
+            HTMLHelper::_('jquery.framework');
+        }
         if (!Factory::getApplication()->isClient('site')) {
             return;
         }
