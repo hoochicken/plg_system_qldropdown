@@ -28,8 +28,7 @@ class plgSystemQldropdown extends CMSPlugin
         if (Factory::getApplication()->isClient('site')) {
             return;
         }
-        $lang = Factory::getApplication()->getLanguage();
-         $lang->load('plg_content_qldropdown', dirname(__FILE__));
+        Factory::getLanguage()->load('plg_content_qldropdown', dirname(__FILE__));
     }
 
     /**
