@@ -9,6 +9,7 @@
 //no direct access
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\Helpers\Jquery;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 
@@ -38,7 +39,8 @@ class plgSystemQldropdown extends CMSPlugin
     {
         if (empty($this->params)) return;
         if ($this->params->get('jquery', 0)) {
-            HTMLHelper::_('jquery.framework');
+            Factory::getApplication()->getDocument()->getWebAssetManager()->useScript('jquery');
+            // Jquery::framework();
         }
         if (!Factory::getApplication()->isClient('site')) {
             return;

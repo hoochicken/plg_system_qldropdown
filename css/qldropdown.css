@@ -1,9 +1,9 @@
-/*
-@package		plg_system_qldropdown
-@copyright	    Copyright (C) 2026 ql.de All rights reserved.
-@author 		Mareike Riegel mareike.riegel@ql.de
-@license		GNU General Public License version 2 or later; see LICENSE.txt
-*/
+/**
+ * @package		plg_system_qldropdown
+ * @copyright	    Copyright (C) 2026 ql.de All rights reserved.
+ * @author 		Mareike Riegel mareike.riegel@ql.de
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
 ul.qldropdown.horizontal>li {float:left;}
 ul.qldropdown li {position:relative;}
 ul.qldropdown li ul {list-style-type:none;padding:0;margin:0;min-width:100%;z-index:10;box-sizing:border-box;}
