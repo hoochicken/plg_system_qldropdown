@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		plg_system_qldropdown
- * @copyright	Copyright (C) 2023 ql.de All rights reserved.
+ * @copyright	Copyright (C) 2026 ql.de All rights reserved.
  * @author 		Ingo Holewczuk info@ql.de; Mareike Riegel mareike.riegel@ql.de
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -29,7 +29,7 @@ class plgSystemQldropdown extends CMSPlugin
             return;
         }
         $lang = Factory::getApplication()->getLanguage();
-        $lang->load('plg_content_qldropdown', dirname(__FILE__));
+         $lang->load('plg_content_qldropdown', dirname(__FILE__));
     }
 
     /**
